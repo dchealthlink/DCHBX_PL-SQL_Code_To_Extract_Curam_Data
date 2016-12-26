@@ -38,3 +38,6 @@ select GET_APP_REF ('GHNCYT@gmail.com', 18.1) from dual;
 /* Use this statement to first find a caseworker ID to test with and a time interval from which to search */          
 select ENTEREDBYUSER, TO_CHAR(CREATEDON, 'yyyy/mm/dd hh24:mi:ss'), TO_CHAR(LASTWRITTEN, 'yyyy/mm/dd hh24:mi:ss') 
           from INTAKEPROGRAMAPPLICATION where INTAKEPROGRAMAPPLICATION.CREATEDON >= (SYSDATE - 2000.0/(60.0 * 24.0)) order by CREATEDON desc;
+
+/* Use this to compute the number of minutes from a previous date/time to NOW */
+select 24*60*(SYSDATE - TO_DATE('2016/12/21 13:48:30', 'yyyy/mm/dd hh24:mi:ss')) from dual;

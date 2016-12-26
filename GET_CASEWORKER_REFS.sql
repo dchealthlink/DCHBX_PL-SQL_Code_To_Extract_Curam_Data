@@ -131,4 +131,6 @@ select M.USERNAME, PDC.CASEREFERENCE, (select description from codetableitem whe
       and PDC.integratedcaseid = ch.caseid
       and PDC.caseid = pd.caseid
       and PDC.CREATEDON >= (SYSDATE - 2000.0/(60.0 * 24.0)) /* 1440 minutes = 1 day */ order by PDC.CREATEDON DESC;
-              
+
+/* Use this to compute the number of minutes from a previous date/time to NOW */
+select 24*60*(SYSDATE - TO_DATE('2016/12/21 13:48:30', 'yyyy/mm/dd hh24:mi:ss')) from dual;
